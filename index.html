@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>router</title>
+     
+    <script src="https://unpkg.com/vue@2.4.2"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+</head>
+<body>
+
+    <div id="app">
+
+        <h1>choos a link below</h1>
+
+        <ul>
+            <li><router-link to="/one">link one</router-link></li>
+            <li><router-link to="/two">link two</router-link></li>
+            <li><router-link to="/three">link three</router-link></li>
+
+        </ul>
+
+        <div id="content">
+
+            <router-view></router-view>
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+    <script type="text/javascript">
+
+    const one = {
+
+        template:`<div class ='text-center'>
+
+        <h2>this is the router.router is the vue js part</h2>
+        
+                    </div>`
+
+                    
+    }
+
+    const two = { 
+        template:'<h1>Two</h1>'
+    }
+
+    const three = {
+        template:'<h1>Three</h1>'
+    }
+
+    const router = new VueRouter({
+        routes:[
+            {
+                path:'/one',
+                component:one
+
+            },
+            {
+                path:'/two',
+                component:two
+ 
+            },
+            {
+                path:'/three',
+                component:three
+
+            }
+
+
+        ]
+
+
+    });
+
+
+
+
+
+    var routest= new Vue({
+        router,
+        el:'#app',
+        data:{
+
+        },
+
+        methods:{
+            
+
+        }
+    }).$mount('#app');
+    
+    </script>
+
+
+
+
+
+   
+</body>
+</html>
